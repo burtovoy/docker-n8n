@@ -1,20 +1,14 @@
-# Use an official Node.js 14 image as a base
-FROM node:14
+# Use the official n8n image from Docker Hub
+FROM n8nio/n8n:latest
 
-# Set the working directory to /app
-WORKDIR /app
+# Define the working directory
+WORKDIR /data
 
-# Copy the package.json file
-COPY package*.json ./
+# Copy custom n8n settings if any (optional)
+# COPY .n8n /root/.n8n
 
-# Install dependencies
-RUN npm install
-
-# Copy the rest of the code
-COPY . .
-
-# Expose the port
+# Expose the default n8n port
 EXPOSE 5678
 
-# Run the command to start n8n
-CMD ["n8n", "start"]
+# Start n8n
+CMD ["n8n"]
