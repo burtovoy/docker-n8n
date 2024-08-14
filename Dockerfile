@@ -8,7 +8,7 @@ WORKDIR /data
 # COPY .n8n /root/.n8n
 
 # Expose the default n8n port
-EXPOSE 5678
+EXPOSE 80
 
 # Start n8n
 CMD ["n8n"]
